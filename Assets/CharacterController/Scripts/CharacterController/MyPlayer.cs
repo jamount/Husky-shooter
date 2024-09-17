@@ -56,7 +56,6 @@ public class MyPlayer : MonoBehaviour
         {
             cameraRotation -= mouseLookAxisUp * 100f * Time.deltaTime;
             cameraRotation = Mathf.Clamp(cameraRotation, -90f, 90f);
-            Debug.Log(Quaternion.Euler(cameraRotation, 0f, 0f));
             Camera.transform.localRotation = Quaternion.Euler(cameraRotation, 0f, 0f);
         }
 
