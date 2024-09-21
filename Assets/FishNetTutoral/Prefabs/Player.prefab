@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2355892551898412070}
   - component: {fileID: 183534158775177632}
   - component: {fileID: 9191991712582229394}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,8 +108,7 @@ GameObject:
   - component: {fileID: 5519429835513264871}
   - component: {fileID: 4645156261782501868}
   - component: {fileID: 5082440920556707298}
-  - component: {fileID: 3060408907224705109}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,20 +180,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3060408907224705109
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5559458485224002041}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6365401118830497088
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +196,9 @@ GameObject:
   - component: {fileID: 7187395169063983637}
   - component: {fileID: 4115721183996660623}
   - component: {fileID: 5350611192987871804}
-  m_Layer: 0
+  - component: {fileID: 449022001511383984}
+  - component: {fileID: 929659600247627744}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,6 +263,7 @@ MonoBehaviour:
   gravity: 20
   lookSpeed: 2
   lookXLimit: 45
+  playerSelfLayer: 7
   canMove: 1
   cameraYOffset: 0.4
 --- !u!114 &3088093760224736908
@@ -422,6 +410,36 @@ MonoBehaviour:
   pickupLayers:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &449022001511383984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6365401118830497088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba0540335227a44fb67d68e0e88816f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentIndexCache: 255
+  _addedNetworkObject: {fileID: 3088093760224736908}
+  _networkObjectCache: {fileID: 0}
+  maxHealth: 30
+--- !u!136 &929659600247627744
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6365401118830497088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7767851818497893881
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5169600117355264583}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,10 +535,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3318432739845166165, guid: e1e8d7dc6db44d642b5a193fba53f91f,
+        type: 3}
+      propertyPath: Damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318432739845166165, guid: e1e8d7dc6db44d642b5a193fba53f91f,
+        type: 3}
+      propertyPath: weaponHitLayers.m_Bits
+      value: 321
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123458515743634132, guid: e1e8d7dc6db44d642b5a193fba53f91f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8079118034177575429, guid: e1e8d7dc6db44d642b5a193fba53f91f,
         type: 3}
       propertyPath: m_Name
       value: Pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 8079118034177575429, guid: e1e8d7dc6db44d642b5a193fba53f91f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8079118034177575429, guid: e1e8d7dc6db44d642b5a193fba53f91f,
         type: 3}
@@ -609,6 +647,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4332331565640879355, guid: 03a10b9d11471444ca207173509f77e8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766872428242128423, guid: 03a10b9d11471444ca207173509f77e8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882511178480934330, guid: 03a10b9d11471444ca207173509f77e8,
+        type: 3}
+      propertyPath: weaponHitLayers.m_Bits
+      value: 321
+      objectReference: {fileID: 0}
     - target: {fileID: 7152678239054699528, guid: 03a10b9d11471444ca207173509f77e8,
         type: 3}
       propertyPath: m_Name
@@ -616,8 +669,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7152678239054699528, guid: 03a10b9d11471444ca207173509f77e8,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152678239054699528, guid: 03a10b9d11471444ca207173509f77e8,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278756612230680966, guid: 03a10b9d11471444ca207173509f77e8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03a10b9d11471444ca207173509f77e8, type: 3}
@@ -646,6 +709,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6557869087243757717}
     m_Modifications:
+    - target: {fileID: 149420774613494032, guid: 89de4c7ad73fc12449d94b5ea5500f15,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3074195845807650395, guid: 89de4c7ad73fc12449d94b5ea5500f15,
         type: 3}
       propertyPath: m_Name
@@ -653,8 +721,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3074195845807650395, guid: 89de4c7ad73fc12449d94b5ea5500f15,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074195845807650395, guid: 89de4c7ad73fc12449d94b5ea5500f15,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887274690055044730, guid: 89de4c7ad73fc12449d94b5ea5500f15,
+        type: 3}
+      propertyPath: Damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887274690055044730, guid: 89de4c7ad73fc12449d94b5ea5500f15,
+        type: 3}
+      propertyPath: maxRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887274690055044730, guid: 89de4c7ad73fc12449d94b5ea5500f15,
+        type: 3}
+      propertyPath: weaponHitLayers.m_Bits
+      value: 321
       objectReference: {fileID: 0}
     - target: {fileID: 6000994888652997983, guid: 89de4c7ad73fc12449d94b5ea5500f15,
         type: 3}

@@ -13,6 +13,7 @@ public class PlayerController : NetworkBehaviour
     public float gravity = 20.0f;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
+    [SerializeField] private int playerSelfLayer =  7;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
@@ -38,6 +39,12 @@ public class PlayerController : NetworkBehaviour
             if (TryGetComponent(out PlayerWeapon playerWeapon))
             {
                 playerWeapon.InitializeWeapons(playerCamera.transform);
+            }
+
+            gameObject.layer = playerSelfLayer;
+            foreach (Transform child in transform)
+            {
+                child.gameObject.layer = playerSelfLayer;
             }
         }
         else
